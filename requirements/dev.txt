@@ -1,0 +1,100 @@
+#======== 1.9 is not supported by django_modeltranslation
+#======== 1.8.7 logs ‘FileNotFoundError: [Errno 2] No translation file found for domain: 'django'’
+django>=1.8,<1.8.7
+
+# ======== Database connectivity ========
+psycopg2==2.6.1
+
+# ======== REST stuff ========
+djangorestframework==3.3.3
+djangorestframework-gis==0.10.1
+django-filter==0.12.0
+
+# ======== Front-end connectivity ========
+django-assets==0.11
+jsroutes==0.1.6
+
+# ======== External connectivity ========
+# beautifulsoup4
+lxml==3.6.0
+
+# ======== AUTH stuff ========
+# git+https://github.com/mehcode/python-xmlsec.git
+python-social-auth==0.2.13
+# python3-saml
+# saml
+django-guardian==1.3.2
+
+# ======== Miscellaneous ========
+unidecode
+django-autoslug==1.9.3
+jsmin==2.2.1
+
+# ======== Debug ========
+sqlparse==0.1.19
+django-debug-toolbar==1.4
+django-extensions==1.6.7
+werkzeug
+
+# ======== TIMEZONE ========
+pytz==2016.4
+
+# ======== LogEntry admin =======
+django-logentry-admin==0.1.5
+
+#=======Code Coverage Analysis======
+coverage==3.7.1
+django-coverage==1.2.4
+
+#========API Docs=========
+django-rest-swagger==0.3.7
+
+#========Files format support=======
+xlrd==0.9.4
+xlwt==1.0.0
+
+#=======Imaging======
+pillow
+
+#======== Task runner ========
+django-celery==3.1.17
+
+#=====Survey=====
+pyparsing==2.1.5
+
+#=====Dateutil=====
+python-dateutil==2.5.3
+
+#=====Tinys3=====
+tinys3==0.1.11
+
+#=====Redis=======
+django-redis==4.4.3
+
+#=====geopy======
+geopy==1.11.0
+
+#=====django-celery-transactions=====
+django-celery-transactions==0.3.6
+
+#=====security======
+django-session-security==2.3.2
+django-axes==1.7.0
+python-keyczar==0.716
+
+#======Test without migrations======
+django-test-without-migrations==0.4
+
+#=======Monitoring===========
+newrelic==2.66.0.49
+
+#======Parser======
+pyyaml
+
+#======google-maps-services======
+googlemaps==2.4.4
+
+#=====constance dynamic settings=========
+django-constance==1.2
+
+django-notifications-hq==1.2
