@@ -116,7 +116,7 @@
         </entry>
       </file>
       <file leaf-file-name="01_packages.config" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.elasticbeanstalk/01_packages.config">
+        <entry file="file://$PROJECT_DIR$/.ebextensions/01_packages.config">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.06311361">
               <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
@@ -151,6 +151,7 @@
         <option value="$PROJECT_DIR$/requirements/dev.txt" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/.elasticbeanstalk/01_packages.config" />
+        <option value="$PROJECT_DIR$/.ebextensions/01_packages.config" />
       </list>
     </option>
   </component>
@@ -214,7 +215,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value=".elasticbeanstalk" />
+              <option name="myItemId" value=".ebextensions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -624,7 +625,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.elasticbeanstalk/01_packages.config">
+    <entry file="file://$PROJECT_DIR$/.ebextensions/01_packages.config">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.06311361">
           <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
