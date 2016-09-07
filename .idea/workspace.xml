@@ -76,8 +76,8 @@
       <file leaf-file-name="02_python.config" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.ebextensions/02_python.config">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.042075735">
-              <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.12622721">
+              <caret line="6" column="97" selection-start-line="6" selection-start-column="97" selection-end-line="6" selection-end-column="97" />
               <folding />
             </state>
           </provider>
@@ -697,8 +697,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.ebextensions/02_python.config">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.042075735">
-          <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.12622721">
+          <caret line="6" column="97" selection-start-line="6" selection-start-column="97" selection-end-line="6" selection-end-column="97" />
           <folding />
         </state>
       </provider>
