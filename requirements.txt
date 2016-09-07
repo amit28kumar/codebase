@@ -14,10 +14,6 @@ django-filter==0.12.0
 django-assets==0.11
 jsroutes==0.1.6
 
-# ======== External connectivity ========
-# beautifulsoup4
-lxml==3.6.0
-
 # ======== AUTH stuff ========
 # git+https://github.com/mehcode/python-xmlsec.git
 python-social-auth==0.2.13
