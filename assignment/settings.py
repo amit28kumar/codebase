@@ -82,15 +82,38 @@ REST_FRAMEWORK = {
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
-	'default': {
-		'ENGINE': 'django.contrib.gis.db.backends.postgis',
-		'NAME': 'mydb',
-		'HOST': 'localhost',
-		'USER': 'web',
-		'PASSWORD': 'singh',
-	}
-}
+if 'RDS_DB_NAME' in os.environ:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.environ['RDS_DB_NAME'],
+            'USER': os.environ['RDS_USERNAME'],
+            'PASSWORD': os.environ['RDS_PASSWORD'],
+            'HOST': os.environ['RDS_HOSTNAME'],
+            'PORT': os.environ['RDS_PORT'],
+        }
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'assignment',
+            'USER': 'assignment',
+            'PASSWORD': 'assignment',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+    }
+
+# DATABASES = {
+# 	'default': {
+# 		'ENGINE': 'django.contrib.gis.db.backends.postgis',
+# 		'NAME': 'mydb',
+# 		'HOST': 'localhost',
+# 		'USER': 'web',
+# 		'PASSWORD': 'singh',
+# 	}
+# }
 
 
 # Internationalization
@@ -109,5 +132,7 @@ USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
+
+STATIC_ROOT = os.path.join(BASE_DIR, "..", "www", "static")
 
 STATIC_URL = '/static/'
