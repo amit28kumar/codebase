@@ -16,7 +16,7 @@
         border-radius: 6px;
         color: #999;
         box-shadow: 0px 0px 5px #888;
-        border: 1px solid;">{% csrf_token %}
+        border: 1px solid; margin-top: 50px;">{% csrf_token %}
         <table border="0" style="margin: 15px;border-spacing: 20px;">
             <tr><th><label for="id_username">Username:</label></th><td>{{ form.username }}</td></tr>
             <tr><th><label for="id_password">Password:</label></th><td>{{ form.password }}</td></tr>
@@ -25,5 +25,4 @@
         <input type="hidden" name="next" value="/report" />
       </div></center>
     </form>
-    <!--<a href="/register">Register</a>-->
 {% endblock %}
