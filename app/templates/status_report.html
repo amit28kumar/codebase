@@ -25,10 +25,13 @@
                 "title":document.getElementsByTagName('input')[3].value,
                 "due_date":document.getElementsByTagName('input')[4].value,
                 "priority":document.getElementById('p').value,
-                "state":document.getElementById('s').value
+                "state":document.getElementById('s').value,
                 };
+        var csrf = '{{ csrf_token }}';
         var jsreq = new XMLHttpRequest();
         jsreq.open("POST","add-task/",true);
+        jsreq.setRequestHeader("Content-type", "application/json");
+        jsreq.setRequestHeader("X-CSRFToken" , csrf);
         var data = JSON.stringify(dict);
         jsreq.send(data);
         location.replace(window.location);
@@ -43,7 +46,6 @@
          location.replace(url);
         }
         };
-        <!--window.alert(document.getElementsByTagName('input')[1].value)-->
         var url = "?date="+document.getElementsByTagName('input')[0]
         .value+'&month='+document.getElementsByTagName('input')[1]
         .value+'&week='+document.getElementsByTagName('input')[2].value;
@@ -59,9 +61,11 @@
         var value = sel.value;
         var param = sel.id
         var data = param + "=" + value
-        window.alert(JSON.stringify(data));
+        var csrf = '{{ csrf_token }}';
         var jsreq = new XMLHttpRequest();
         jsreq.open("PATCH","update-task/"+id,true);
+        jsreq.setRequestHeader("Content-type", "application/json");
+        jsreq.setRequestHeader("X-CSRFToken" , csrf);
         jsreq.send(data);
         jsreq.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {

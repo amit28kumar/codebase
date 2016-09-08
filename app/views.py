@@ -10,10 +10,11 @@ from datetime import datetime, date
 
 
 class AppView(APIView):
+
     @method_decorator(login_required)
     def get(self, request, format=None):
         try:
-            due_date = self.request.GET.get('year', None)
+            due_date = self.request.GET.get('date', None)
             month_data = self.request.GET.get('month', None)
             week_date = self.request.GET.get('week', None)
             if due_date:
@@ -60,8 +61,7 @@ class AppView(APIView):
 
     def post(self, request, format=None):
         try:
-            data = request.body
-            data = ast.literal_eval(data)
+            data = request.data
             params = {'title':data.get('title'),
                       'due_date': data.get('due_date'),
                       'priority': data.get('priority'),
