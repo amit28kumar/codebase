@@ -52,7 +52,7 @@
       }
 
       function resetTask(){
-            location.replace("http://localhost:8000/report/");
+            location.replace(window.location);
       }
 
      function  updateTask(sel, id){
@@ -97,7 +97,7 @@
      }
   </script>
     <h1>Task List</h1>
-    <div id="task_count" style="float:left;width:50%">
+    <div id="task_count" style="float:left;width:50%;min-height: 400px;">
         <h2>Total Tasks Count : {{count}}</h2>
         <table>
             <tr>
