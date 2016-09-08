@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+import django.contrib.auth
+
+
+django.contrib.auth.LOGIN_URL = '/'
+
 
 # Application definition
 
@@ -38,6 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'authentication',
     'app',
 )
 
@@ -57,7 +63,8 @@ ROOT_URLCONF = 'assignment.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/Users/amitsingh/Amit/assignment/app/templates'],
+        'DIRS': ['/Users/amitsingh/Amit/assignment/app/templates',
+                 '/Users/amitsingh/Amit/assignment/authentication/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

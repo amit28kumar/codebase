@@ -1,6 +1,8 @@
 from django.shortcuts import render_to_response, RequestContext
 from .models import Item
 from rest_framework.views import APIView
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 import ast
 from rest_framework import status
 from rest_framework.response import Response
@@ -8,7 +10,7 @@ from datetime import datetime, date
 
 
 class AppView(APIView):
-
+    @method_decorator(login_required)
     def get(self, request, format=None):
         try:
             due_date = self.request.GET.get('year', None)
@@ -47,7 +49,8 @@ class AppView(APIView):
                 todo_listing.append(todo_dict)
             return render_to_response('status_report.html',
                                       { 'todo_listing':todo_listing ,
-                                        'count':tasks.count},
+                                        'count':tasks.count, 'user':
+                                            request.user},
                                       context_instance=RequestContext(request))
         except Exception as exp:
             import traceback
