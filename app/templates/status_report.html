@@ -124,9 +124,11 @@
                          </div>
                         <div id="priorityselect{{list_dict.id}}" class="displayNone">
                             <select name="priority" id="priority" onchange="updateTask(this, {{list_dict.id}})" value="{{list_dict.priority}}">
-                                <option value="1" >Low</option>
-                                <option value="2" >Medium</option>
-                                <option value="3" >High</option>
+                                <option value="1"
+                                    {% if list_dict.priority == 1 %} selected="selected"{% endif %}>Low</option>
+                                <option value="2"
+                                {% if list_dict.priority == 2 %} selected="selected"{% endif %}>Medium</option>
+                                <option value="3" {% if list_dict.priority == 3 %} selected="selected"{% endif %}>High</option>
                             </select>
                         </div>
                     </td>
@@ -138,9 +140,9 @@
                         </div>
                         <div id="select{{list_dict.id}}" class="displayNone">
                             <select name="state" id="state" onchange="updateTask(this, {{list_dict.id}})" value="{{list_dict.state}}">
-                                <option value="1">Todo</option>
-                                <option value="2">Doing</option>
-                                <option value="3">Done</option>
+                                <option value="1" {% if list_dict.state == 1 %} selected="selected"{% endif %}>Todo</option>
+                                <option value="2" {% if list_dict.state == 2 %} selected="selected"{% endif %}>Doing</option>
+                                <option value="3" {% if list_dict.state == 3 %} selected="selected"{% endif %}>Done</option>
                             </select>
                         </div>
                     </td>
@@ -157,9 +159,9 @@
                          </div>
                         <div id="priorityselect{{list_dict.id}}" class="displayNone">
                             <select name="priority" id="priority" onchange="updateTask(this, {{list_dict.id}})" value="{{list_dict.priority}}">
-                                <option value="1" >Low</option>
-                                <option value="2" >Medium</option>
-                                <option value="3" >High</option>
+                                <option value="1" {% if list_dict.priority == 1 %} selected="selected"{% endif %}>Low</option>
+                                <option value="2" {% if list_dict.priority == 2 %} selected="selected"{% endif %}>Medium</option>
+                                <option value="3" {% if list_dict.priority == 3 %} selected="selected"{% endif %}>High</option>
                             </select>
                         </div>
                     </td>
@@ -171,9 +173,9 @@
                         </div>
                         <div id="select{{list_dict.id}}" class="displayNone">
                             <select name="state" id="state" onchange="updateTask(this, {{list_dict.id}})" value="{{list_dict.state}}">
-                                <option value="1">Todo</option>
-                                <option value="2">Doing</option>
-                                <option value="3">Done</option>
+                                <option value="1" {% if list_dict.state == 1 %} selected="selected"{% endif %}>Todo</option>
+                                <option value="2" {% if list_dict.state == 2 %} selected="selected"{% endif %}>Doing</option>
+                                <option value="3" {% if list_dict.state == 3 %} selected="selected"{% endif %}>Done</option>
                             </select>
                         </div>
                     </td>
@@ -190,9 +192,9 @@
                          </div>
                         <div id="priorityselect{{list_dict.id}}" class="displayNone">
                             <select name="priority" id="priority" onchange="updateTask(this, {{list_dict.id}})" value="{{list_dict.priority}}">
-                                <option value="1" >Low</option>
-                                <option value="2" >Medium</option>
-                                <option value="3" >High</option>
+                                <option value="1" {% if list_dict.priority == 1 %} selected="selected"{% endif %}>Low</option>
+                                <option value="2" {% if list_dict.priority == 2 %} selected="selected"{% endif %}>Medium</option>
+                                <option value="3" {% if list_dict.priority == 3 %} selected="selected"{% endif %}>High</option>
                             </select>
                         </div>
                     </td>
@@ -204,9 +206,9 @@
                         </div>
                         <div id="select{{list_dict.id}}" class="displayNone">
                             <select name="state" id="state" onchange="updateTask(this, {{list_dict.id}})" value="{{list_dict.state}}">
-                                <option value="1">Todo</option>
-                                <option value="2">Doing</option>
-                                <option value="3">Done</option>
+                                <option value="1" {% if list_dict.state == 1 %} selected="selected"{% endif %}>Todo</option>
+                                <option value="2" {% if list_dict.state == 2 %} selected="selected"{% endif %}>Doing</option>
+                                <option value="3" {% if list_dict.state == 3 %} selected="selected"{% endif %}>Done</option>
                             </select>
                         </div>
                     </td>
@@ -224,9 +226,9 @@
                     </div>
                     <div id="priorityselect{{list_dict.id}}" class="displayNone">
                         <select name="" id="priority" onchange="updateTask(this, {{list_dict.id}})" value="{{list_dict.priority}}">
-                            <option value="1">Low</option>
-                            <option value="2">Medium</option>
-                            <option value="3">High</option>
+                            <option value="1" {% if list_dict.priority == 1 %} selected="selected"{% endif %}>Low</option>
+                            <option value="2" {% if list_dict.priority == 2 %} selected="selected"{% endif %}>Medium</option>
+                            <option value="3" {% if list_dict.priority == 3 %} selected="selected"{% endif %}>High</option>
                         </select>
                     </div>
                 </td>
@@ -238,9 +240,9 @@
                     </div>
                     <div id="select{{list_dict.id}}" class="displayNone">
                         <select name="" id="state" onchange="updateTask(this, {{list_dict.id}})" value="{{list_dict.state}}">
-                            <option value="1">Todo</option>
-                            <option value="2">Doing</option>
-                            <option value="3">Done</option>
+                            <option value="1" {% if list_dict.state == 1 %} selected="selected"{% endif %}>Todo</option>
+                            <option value="2" {% if list_dict.state == 2 %} selected="selected"{% endif %}>Doing</option>
+                            <option value="3" {% if list_dict.state == 3 %} selected="selected"{% endif %}>Done</option>
                         </select>
                     </div>
                 </td>
