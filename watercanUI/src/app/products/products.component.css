@@ -34,6 +34,9 @@
 
 img{
   width: 100%;
+  position: relative;
+  padding-left: 25px;
+  padding-top: 20px;
 }
 
 .product-bottom .fa{

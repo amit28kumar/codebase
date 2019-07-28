@@ -21,8 +21,8 @@ export class ApiService {
     return this.http.get(this.baseurl + '/product/', {headers: this.httpHeaders});
   }
 
-  getProductDetails(): Observable<Blob>{
-    return this.http.get(this.baseurl + '/product_details/', {headers: this.httpHeaders}, {responseType: "blob"});
+  getProductDetails(): Observable<any>{
+    return this.http.get(this.baseurl + '/product_details/', {headers: this.httpHeaders});
   }
 
 }
