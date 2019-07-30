@@ -1,0 +1,28 @@
+<header>
+  <div class="main">
+        <div *ngFor="let pr_detail of getFilteredProducts()">
+          <div class="col-md-3">
+            <div class="product-top">
+              <img src="../assets/images/{{pr_detail.image_name}}" alt="">
+              <div class="overlay">
+                <button type="button" class="btn btn-secondary" title="Quick Shop"><i class="fa fa-eye"></i></button>
+                <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i class="fa fa-heart-o"></i></button>
+                <button type="button" class="btn btn-secondary" title="Add to Cart" (click)="addToCart(pr_detail)"><i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <div class="product-bottom text-center">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+              <h3>{{pr_detail.category}}</h3>
+              <h5>Rs {{pr_detail.price}}</h5>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="getFilteredProducts().length == 0">
+          <h3>No Result Found !!</h3>
+        </div>
+    </div>
+</header>

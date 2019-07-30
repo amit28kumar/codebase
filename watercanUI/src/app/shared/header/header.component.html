@@ -1,0 +1,33 @@
+<div class="headerMenu">
+        <h2>Drip.com</h2>
+        <div class="form-group">
+          <input type="text" class="form-control" id="search" placeholder="Search for products, brands"  (change)="searchProductDetails($event)" />
+          <i class="fa fa-search searchIcon"></i>
+        </div>
+
+
+        <ul>
+          <li><a routerLink="/home" (click)="setSearchFlag()"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a routerLink="/products" (click)="setSearchFlag()">Products</a></li>
+          <!-- <li class="dropdown" dropdown>
+              <a dropdownToggle role="button">
+                Products <span class="caret"></span></a>
+              <ul *dropdownMenu class="dropdown-menu">
+                  <li><a href="#">Non Branded</a></li>
+                  <li><a href="#">Bisleri</a></li>
+                  <li><a href="#">Kinley</a></li>
+                  <li><a href="#">Smart Water</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Himalayan</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Aquafina</a></li>
+              </ul>
+          </li> -->
+          <li><a href="#">Contact</a></li>
+          <li><a href="#"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+        </ul>
+</div>
+<div *ngIf="searchFlag">
+  <app-search></app-search>
+</div>

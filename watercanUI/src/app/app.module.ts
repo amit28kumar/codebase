@@ -8,12 +8,19 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { SearchComponent } from './search/search.component';
+import { Globals } from './globals';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProductsComponent
+    ProductsComponent,
+    ShoppingCartComponent,
+    HeaderComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +29,7 @@ import { ProductsComponent } from './products/products.component';
     AppBootstrapModule,
     AngularFontAwesomeModule
   ],
-  providers: [],
+  providers: [Globals],
   bootstrap: [AppComponent, ProductsComponent, HomeComponent]
 })
 export class AppModule { }

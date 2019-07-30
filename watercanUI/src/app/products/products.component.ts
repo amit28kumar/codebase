@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Globals } from '../globals';
 
 @Component({
   selector: 'app-products',
@@ -11,7 +12,7 @@ export class ProductsComponent implements OnInit {
   products: any;
   product_details: any;
 
-  constructor(private api: ApiService) {
+  constructor(private api: ApiService, private global: Globals) {
     this.getProduct();
     this.getProductDetails();
   }
@@ -38,10 +39,28 @@ export class ProductsComponent implements OnInit {
     )
   }
 
-  getSpecificProductDetails = (id) =>{
-    var newArray = this.product_details.filter(function (el) {
-      return el.product.id == id;
-      });
+  count(name){
+    var data = []
+    for(var k in this.product_details){
+      if(this.product_details[k].product == name){
+        data.push(this.product_details[k]);
+      }
+    }
+    return data.length;
+  }
+
+  addToCart = (product) =>{
+    console.log(product);
+  }
+
+  getSearchFlag = () => {
+    return this.global.searchFlag;
+  }
+
+  setSearchFlag = () => {
+    if(this.global.searchFlag){
+      this.global.searchFlag = !this.global.searchFlag;
+    }
   }
 
   ngOnInit() {
