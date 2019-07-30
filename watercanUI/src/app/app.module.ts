@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
 import { SearchComponent } from './search/search.component';
 import { Globals } from './globals';
 
@@ -20,6 +21,7 @@ import { Globals } from './globals';
     ProductsComponent,
     ShoppingCartComponent,
     HeaderComponent,
+    FooterComponent,
     SearchComponent
   ],
   imports: [

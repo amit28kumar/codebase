@@ -62,7 +62,7 @@ ul li.active a{
 }
 
 .main{
-  max-width: 1200px;
+  max-width: 100%;
   max-height: auto;
 }
 
@@ -96,9 +96,4 @@ ul li.active a{
 .btn:hover{
   background-color: #fff;
   color: #000;
-}
-
-.headerMenu ul{
-  position: absolute;
-  left: 68%;
 }
