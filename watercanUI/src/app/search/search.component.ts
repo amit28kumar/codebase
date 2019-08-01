@@ -30,13 +30,13 @@ export class SearchComponent implements OnInit {
   getFilteredProducts = () => {
     this.filtered_product = []
     for(var k in this.product_details){
-      if(this.product_details[k].product.replace(/ /g,'').toLowerCase() == this.global.searchKey.toString().toLowerCase()){
+      if(this.product_details[k].product.replace(/ /g,'').toLowerCase() == this.global.searchKey.replace(/ /g,'').toLowerCase()){
         this.filtered_product.push(this.product_details[k])
       }
-      else if(this.product_details[k].product.replace(/ /g,'').toLowerCase().includes(this.global.searchKey.toString().toLowerCase())){
+      else if(this.product_details[k].product.replace(/ /g,'').toLowerCase().includes(this.global.searchKey.replace(/ /g,'').toLowerCase())){
         this.filtered_product.push(this.product_details[k])
       }
-      else if(this.product_details[k].category.replace(/ /g,'').toLowerCase().includes(this.global.searchKey.toString().toLowerCase())){
+      else if(this.product_details[k].category.replace(/ /g,'').toLowerCase().includes(this.global.searchKey.replace(/ /g,'').toLowerCase())){
         this.filtered_product.push(this.product_details[k]);
       }
     }
