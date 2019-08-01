@@ -1,2 +1,6 @@
 <!-- <app-header></app-header> -->
 <p>shopping-cart works!</p>
+<div *ngFor="let data of global.specificItemCount">
+  <p>product id : {{data.product_id}}</p>
+  <p>count : {{data.count}}</p>
+</div>
