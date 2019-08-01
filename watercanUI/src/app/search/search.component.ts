@@ -30,14 +30,13 @@ export class SearchComponent implements OnInit {
   getFilteredProducts = () => {
     this.filtered_product = []
     for(var k in this.product_details){
-      console.log(this.product_details[k].category.replace(/ /g,''));
-      if(this.product_details[k].product.replace(/ /g,'').toLowerCase() == this.global.searchKey.replace(/ /g,'').toLowerCase()){
+      if(this.product_details[k].product.replace(/ /g,'').toLowerCase() == this.global.searchKey.toString().toLowerCase()){
         this.filtered_product.push(this.product_details[k])
       }
-      else if(this.product_details[k].product.replace(/ /g,'').toLowerCase().includes(this.global.searchKey.replace(/ /g,'').toLowerCase())){
+      else if(this.product_details[k].product.replace(/ /g,'').toLowerCase().includes(this.global.searchKey.toString().toLowerCase())){
         this.filtered_product.push(this.product_details[k])
       }
-      else if(this.product_details[k].category.replace(/ /g,'').toLowerCase().includes(this.global.searchKey.replace(/ /g,'').toLowerCase())){
+      else if(this.product_details[k].category.replace(/ /g,'').toLowerCase().includes(this.global.searchKey.toString().toLowerCase())){
         this.filtered_product.push(this.product_details[k]);
       }
     }
@@ -47,6 +46,16 @@ export class SearchComponent implements OnInit {
 
   setSearchFlag(){
     this.global.searchKey != this.global.searchKey;
+  }
+
+  addToCart = (product) =>{
+    console.log(product);
+    if(product){
+      this.global.itemCount = parseInt(this.global.itemCount) + 1;
+      console.log(this.global.itemCount);
+      // localStorage.setItem("cartItemCount",this.global.itemCount);
+      // console.log(localStorage);
+    }
   }
 
   ngOnInit() {

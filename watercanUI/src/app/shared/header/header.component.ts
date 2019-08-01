@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
   product_details: any;
   filtered_product: any;
-  searchFlag: boolean = false
+  count = localStorage.getItem("cartItemCount");
 
   constructor(private api: ApiService, private global: Globals) {
     this.getProductDetails();
@@ -28,11 +28,15 @@ export class HeaderComponent implements OnInit {
     )
   }
 
+  setSearchFlag(){
+    if(this.global.searchFlag){
+      this.global.searchFlag = !this.global.searchFlag;
+    }
+  }
 
   searchProductDetails(event){
     this.global.searchKey = event.target.value ;
     this.global.searchFlag = true;
-    this.searchFlag = this.global.searchFlag;
   }
 
   ngOnInit() {
