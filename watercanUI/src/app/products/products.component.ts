@@ -52,14 +52,33 @@ export class ProductsComponent implements OnInit {
   addToCart = (product) =>{
     console.log(product);
     var product_id = product.id;
+    var flag = false;
+    // this.global.dict = {}
     if(product_id){
       this.global.itemCount = parseInt(this.global.itemCount) + 1
-      // var cart_item = JSON.parse(localStorage.getItem("item"));
-      // console.log(cart_item.product);
-      // console.log(cart_item.count);
+      if(this.global.specificItemCount.length == 0){
+        this.global.dict['product_id'] = product_id;
+        this.global.dict['count'] = 1;
+        this.global.specificItemCount.push(this.global.dict);
+        this.global.dict = {}
+      }
+      else{
+          for(var k in this.global.specificItemCount){
+            if(this.global.specificItemCount[k].product_id == product_id){
+              this.global.specificItemCount[k].count = this.global.specificItemCount[k].count + 1;
+              flag = true;
+              this.global.dict = {}
+            }
+          }
+          if(!flag){
+            this.global.dict['product_id'] = product_id;
+            this.global.dict['count'] = 1;
+            this.global.specificItemCount.push(this.global.dict);
+            this.global.dict = {}
+          }
+      }
 
-
-      console.log(localStorage);
+      console.log(this.global.specificItemCount);
     }
   }
 

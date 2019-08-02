@@ -5,4 +5,6 @@ export class Globals {
   searchFlag: boolean = false;
   searchKey: any;
   itemCount=0;
+  specificItemCount = []
+  dict = {}
 }
