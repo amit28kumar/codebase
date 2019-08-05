@@ -51,7 +51,14 @@ class ProductViewSet(viewsets.ViewSet):
 class ProductDetailsViewSet(viewsets.ViewSet):
 
     def list(self, request):
-        queryset = ProductDetails.objects.all()
+        queryset = None
+        query = None
+        pk = self.request.query_params.get('pk') or None
+        print 'In view : ', pk
+        if pk in ['undefined',None]:
+            queryset = ProductDetails.objects.all()
+        else:
+            query = ProductDetails.objects.get(pk=pk)
         response = []
         if queryset:
             for query in queryset:
@@ -61,6 +68,8 @@ class ProductDetailsViewSet(viewsets.ViewSet):
                 # data = base64.b64encode(image.read())
                 # f.close()
                 response.append({'id':query.id, 'product':query.product.name, 'category':query.category, 'price':query.price, 'description':query.description, 'rating':query.rating, 'availability':query.availability, 'image_name':query.image.path.split('/')[-1]})
+        else:
+            response.append({'id':query.id, 'product':query.product.name, 'category':query.category, 'price':query.price, 'description':query.description, 'rating':query.rating, 'availability':query.availability, 'image_name':query.image.path.split('/')[-1]})
 
         return Response(response, status=status.HTTP_200_OK)
 
@@ -79,7 +88,7 @@ class ProductDetailsViewSet(viewsets.ViewSet):
             return Response({'message': exp.message or ', '.join(exp.messages)}, status=status.HTTP_400_BAD_REQUEST)
 
     def retrieve(self, request, pk=None):
-        pass
+        print 'In retrieve'
 
     def update(self, request, pk=None):
         pass

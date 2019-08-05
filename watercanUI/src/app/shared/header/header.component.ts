@@ -11,14 +11,14 @@ export class HeaderComponent implements OnInit {
 
   product_details: any;
   filtered_product: any;
-  count = localStorage.getItem("cartItemCount");
+  product_id: any;
 
   constructor(private api: ApiService, private global: Globals) {
     this.getProductDetails();
   }
 
   getProductDetails = () => {
-    this.api.getProductDetails().subscribe(
+    this.api.getProductDetails(this.product_id).subscribe(
       data => {
         this.product_details = data;
       },

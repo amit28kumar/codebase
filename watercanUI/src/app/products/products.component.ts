@@ -11,6 +11,7 @@ export class ProductsComponent implements OnInit {
 
   products: any;
   product_details: any;
+  product_id: any;
   cartObject = {"product" : 0, "count" : 0};
   constructor(private api: ApiService, private global: Globals) {
     this.getProduct();
@@ -29,7 +30,7 @@ export class ProductsComponent implements OnInit {
   }
 
   getProductDetails = () => {
-    this.api.getProductDetails().subscribe(
+    this.api.getProductDetails(this.product_id).subscribe(
       data => {
         this.product_details = data
       },
@@ -55,7 +56,7 @@ export class ProductsComponent implements OnInit {
     var flag = false;
     // this.global.dict = {}
     if(product_id){
-      this.global.itemCount = parseInt(this.global.itemCount) + 1
+      this.global.itemCount = this.global.itemCount + 1
       if(this.global.specificItemCount.length == 0){
         this.global.dict['product_id'] = product_id;
         this.global.dict['count'] = 1;
@@ -78,7 +79,7 @@ export class ProductsComponent implements OnInit {
           }
       }
 
-      console.log(this.global.specificItemCount);
+      // console.log(this.global.specificItemCount);
     }
   }
 

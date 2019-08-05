@@ -4,7 +4,8 @@ import { Injectable } from '@angular/core';
 export class Globals {
   searchFlag: boolean = false;
   searchKey: any;
-  itemCount=0;
+  itemCount = 0;
   specificItemCount = []
   dict = {}
+  summation = 0
 }

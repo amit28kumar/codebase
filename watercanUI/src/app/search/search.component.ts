@@ -10,6 +10,7 @@ import { Globals } from '../globals';
 export class SearchComponent implements OnInit {
   product_details: any;
   filtered_product = [];
+  product_id: any;
 
   constructor(private api: ApiService, private global: Globals) {
     this.getProductDetails();
@@ -17,7 +18,7 @@ export class SearchComponent implements OnInit {
   }
 
   getProductDetails = () => {
-    this.api.getProductDetails().subscribe(
+    this.api.getProductDetails(this.product_id).subscribe(
       data => {
         this.product_details = data;
       },
@@ -51,7 +52,7 @@ export class SearchComponent implements OnInit {
   addToCart = (product) =>{
     console.log(product);
     if(product){
-      this.global.itemCount = parseInt(this.global.itemCount) + 1;
+      this.global.itemCount = this.global.itemCount + 1;
       console.log(this.global.itemCount);
       // localStorage.setItem("cartItemCount",this.global.itemCount);
       // console.log(localStorage);
