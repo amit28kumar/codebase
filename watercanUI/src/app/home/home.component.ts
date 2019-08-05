@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private api: ApiService, private global: Globals) {
     console.log('In constructor home...');
+    console.log('hello');
   }
 
 
