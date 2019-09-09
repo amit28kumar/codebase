@@ -13,6 +13,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SearchComponent } from './search/search.component';
 import { Globals } from './globals';
+import { ProductDescriptionComponent } from './product-description/product-description.component';
 // import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @NgModule({
@@ -23,7 +24,8 @@ import { Globals } from './globals';
     ShoppingCartComponent,
     HeaderComponent,
     FooterComponent,
-    SearchComponent
+    SearchComponent,
+    ProductDescriptionComponent
   ],
   imports: [
     BrowserModule,

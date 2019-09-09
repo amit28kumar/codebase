@@ -16,6 +16,7 @@ export class ProductsComponent implements OnInit {
   constructor(private api: ApiService, private global: Globals) {
     this.getProduct();
     this.getProductDetails();
+
   }
 
   getProduct = () => {
@@ -53,6 +54,8 @@ export class ProductsComponent implements OnInit {
   addToCart = (product) =>{
     console.log(product);
     var product_id = product.id;
+
+
     var flag = false;
     // this.global.dict = {}
     if(product_id){
@@ -92,6 +95,7 @@ export class ProductsComponent implements OnInit {
       this.global.searchFlag = !this.global.searchFlag;
     }
   }
+
 
   ngOnInit() {
     // localStorage.setItem("item",JSON.stringify(this.cartObject));
